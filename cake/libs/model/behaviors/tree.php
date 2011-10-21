@@ -717,7 +717,7 @@ class TreeBehavior extends ModelBehavior {
 
 		$db =& ConnectionManager::getDataSource($Model->useDbConfig);
 		$Model->updateAll(
-			array($parent => $db->value($node[$parent], $parent)), 
+			array($parent => $db->value($node[$parent], $parent)),
 			array($Model->escapeField($parent) => $node[$Model->primaryKey])
 		);
 		$this->__sync($Model, 1, '-', 'BETWEEN ' . ($node[$left] + 1) . ' AND ' . ($node[$right] - 1));

@@ -4464,12 +4464,12 @@ class DboSourceTest extends CakeTestCase {
  */
 	function testVirtualFieldsComplexRead() {
 		$this->loadFixtures('DataTest', 'Article', 'Comment');
-		
+
 		$Article =& ClassRegistry::init('Article');
 		$commentTable = $this->db->fullTableName('comments');
 		$Article =& ClassRegistry::init('Article');
 		$Article->virtualFields = array(
-			'comment_count' => 'SELECT COUNT(*) FROM ' . $commentTable . 
+			'comment_count' => 'SELECT COUNT(*) FROM ' . $commentTable .
 				' AS Comment WHERE Article.id = Comment.article_id'
 		);
 		$result = $Article->find('all');
@@ -4564,7 +4564,7 @@ class DboSourceTest extends CakeTestCase {
 		$Article->tablePrefix = 'tbl_';
 		$result = $this->testDb->fullTableName($Article, false);
 		$this->assertEqual($result, 'tbl_articles');
-		
+
 		$Article->useTable = $Article->table = 'with spaces';
 		$Article->tablePrefix = '';
 		$result = $this->testDb->fullTableName($Article);

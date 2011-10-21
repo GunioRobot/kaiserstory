@@ -280,7 +280,7 @@ class CakeSchema extends Object {
 									if (in_array($withTable, $currentTables)) {
 										$key = array_search($withTable, $currentTables);
 										$noPrefixWith = str_replace($prefix, '', $withTable);
-	
+
 										$tables[$noPrefixWith] = $this->__columns($Object->$class);
 										$tables[$noPrefixWith]['indexes'] = $db->index($Object->$class);
 										$tables[$noPrefixWith]['tableParameters'] = $db->readTableParameters($withTable);

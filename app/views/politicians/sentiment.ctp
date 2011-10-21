@@ -41,7 +41,7 @@ p {font-size:50px;}
 </div>
 </div>
 =======
-<?php 
+<?php
 foreach ($politicians as $politician):
 echo $politician;
 ?>

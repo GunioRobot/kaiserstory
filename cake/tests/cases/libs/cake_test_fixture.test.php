@@ -203,7 +203,7 @@ class CakeTestFixtureTest extends CakeTestCase {
 		$Fixture->init();
 		$this->assertEqual(array_keys($Fixture->fields), array('id', 'name', 'created'));
 		$this->assertEqual($Fixture->table, 'fixture_tests');
-		
+
 		$keys = array_flip(ClassRegistry::keys());
 		$this->assertFalse(array_key_exists('fixtureimporttestmodel', $keys));
 
@@ -301,7 +301,7 @@ class CakeTestFixtureTest extends CakeTestCase {
 	}
 
 /**
- * test that importing with records works.  Make sure to try with postgres as its 
+ * test that importing with records works.  Make sure to try with postgres as its
  * handling of aliases is a workaround at best.
  *
  * @return void
@@ -334,7 +334,7 @@ class CakeTestFixtureTest extends CakeTestCase {
 
 		$defaultDb->config = $defaultConfig;
 
-		$Source->drop($newTestSuiteDb);	
+		$Source->drop($newTestSuiteDb);
 	}
 
 /**

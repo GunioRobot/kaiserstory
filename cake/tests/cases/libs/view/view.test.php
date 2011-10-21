@@ -474,10 +474,10 @@ class ViewTest extends CakeTestCase {
 	function testElement() {
 		$result = $this->View->element('test_element');
 		$this->assertEqual($result, 'this is the test element');
-		
+
 		$result = $this->View->element('plugin_element', array('plugin' => 'test_plugin'));
 		$this->assertEqual($result, 'this is the plugin element using params[plugin]');
-		
+
 		$this->View->plugin = 'test_plugin';
 		$result = $this->View->element('test_plugin_element');
 		$this->assertEqual($result, 'this is the test set using View::$plugin plugin element');
@@ -937,7 +937,7 @@ class ViewTest extends CakeTestCase {
 
 		$View->set(array('key3' => 'value3'));
 		$this->assertIdentical($View->getVar('key3'), 'value3');
-		
+
 		$View->viewVars = array();
 		$View->set(array(3 => 'three', 4 => 'four'));
 		$View->set(array(1 => 'one', 2 => 'two'));
@@ -960,7 +960,7 @@ class ViewTest extends CakeTestCase {
 		$View->association = 'Comment';
 		$View->field = 'user_id';
 		$this->assertEqual($View->entity(), array('Comment', 'user_id'));
-		
+
 		$View->model = 0;
 		$View->association = null;
 		$View->field = 'Node';
@@ -968,7 +968,7 @@ class ViewTest extends CakeTestCase {
 		$View->entityPath = '0.Node.title';
 		$expected = array(0, 'Node', 'title');
 		$this->assertEqual($View->entity(), $expected);
-		
+
 		$View->model = 'HelperTestTag';
 		$View->field = 'HelperTestTag';
 		$View->modelId = null;

@@ -440,7 +440,7 @@ class CacheHelperTest extends CakeTestCase {
 		);
 		$this->Controller->here = '/cache_test/cache_parsing/1/2/name:mark/ice:cream';
 		$this->Controller->action = 'cache_parsing';
-		
+
 		$View = new View($this->Controller);
 		$result = $View->render('index');
 
@@ -460,7 +460,7 @@ class CacheHelperTest extends CakeTestCase {
 	function testCacheWithCustomRoutes() {
 		Router::reload();
 		Router::connect('/:lang/:controller/:action/*', array(), array('lang' => '[a-z]{3}'));
-		
+
 		$this->Controller->cache_parsing();
 		$this->Controller->params = array(
 			'lang' => 'en',
